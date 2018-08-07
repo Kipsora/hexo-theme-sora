@@ -22,7 +22,7 @@
 <script>
     const backgrounds = '<%= theme.backgrounds.map(function(e) {return url_for(e);}) %>'.split(',');
     const screen_img = $('#sora-screen-img');
-    let current_bg = 0;
+    let current_bg = Math.floor(Math.random() * backgrounds.length);
     const load_image = function(src, call_back) {
         const img = new Image();
         img.src = src;

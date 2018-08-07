@@ -2,9 +2,10 @@
 <%
 var stat = {};
 page.posts.sort('date').reverse().forEach(function(post){
-    var year = post.date.year();
-    var month = post.date.month();
-    var day = post.date.day();
+    var date = post.date;
+    var year = date.year();
+    var month = date.month() + 1;
+    var day = date.date();
     if(stat[year] === undefined){
         stat[year] = {};
     }

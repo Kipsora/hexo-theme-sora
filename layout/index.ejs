@@ -16,7 +16,7 @@
 
          <% if (page.next && page.prev) { %>
          <div class="pagination-bar">
-         <% } else {%>
+         <% } else if (page.next || page.prev) {%>
          <div class="pagination-bar pagination-one">
          <% }%>
             <% if (page.next) { %>
@@ -36,7 +36,9 @@
                 </a>
             </div>
             <% } %>
+        <% if (page.next || page.prev) {%>
         </div>
+        <% }%>
         <hr />
         <%- partial('_partial/footer')%>
     </main>
