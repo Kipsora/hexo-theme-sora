@@ -123,7 +123,7 @@ main article {
     margin-top: 30px;
     line-height: 28px;
     font-size: 16px;
-    font-family: 'Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif;
+    /*font-family: 'Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif;*/
     text-shadow: 0 0 1px rgba(0, 0, 0, .1);
     margin-bottom: 20px;
 }
@@ -216,9 +216,14 @@ main article blockquote {
     font-style: italic;
     width: 100%;
     padding-left: 15px;
-    line-height: 3;
+    padding-right: 15px;
+    line-height: 2;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+main article blockquote .has-jax {
+    line-height: 3;
 }
 
 main article blockquote > * {

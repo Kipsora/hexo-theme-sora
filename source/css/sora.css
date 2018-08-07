@@ -72,66 +72,6 @@ a {
     animation: 1s ease-out 0s 1 fade-in;
 }
 
-.screen-left-button {
-    outline: none;
-    border: none;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
-    height: 100%;
-    width: 100px;
-    position: absolute;
-    padding: 0;
-    opacity: 0;
-    color: rgba(255, 255, 255, 0.76);
-    font-size: 32px;
-    text-align: center;
-    left: 0;
-
-    transition: all .3s;
-    cursor: pointer;
-}
-
-.screen-left-button:hover {
-    opacity: 1;
-}
-
-.screen-left-button:hover * {
-    animation-duration: .5s;
-    animation-name: jump-left;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-    animation-direction: alternate;
-}
-
-.screen-right-button {
-    outline: none;
-    border: none;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
-    height: 100%;
-    width: 100px;
-    position: absolute;
-    padding: 0;
-    opacity: 0;
-    color: white;
-    font-size: 32px;
-    text-align: center;
-    right: 0;
-
-    transition: all .3s;
-    cursor: pointer;
-}
-
-.screen-right-button:hover {
-    opacity: 1;
-}
-
-.screen-right-button:hover :not(.fa-spin){
-    animation-duration: .5s;
-    animation-name: jump-right;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-    animation-direction: alternate;
-}
-
 .main-font {
     font-family: 'Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif;
 }
@@ -231,6 +171,41 @@ body::-webkit-scrollbar-thumb {
     opacity: 0;
 }
 
+/************************************************************/
+
+.pagination-bar {
+    width: 60%;
+    margin: 50px auto 50px auto;
+}
+
+.pagination-one {
+    text-align: center;
+}
+
+.pagination-bar .pagination-older, .pagination-bar .pagination-newer {
+    display: inline-block;
+    font-size: 20px;
+
+}
+
+.pagination-bar .pagination-older a, .pagination-bar .pagination-newer a{
+    padding: 15px 25px 15px 25px;
+    border-radius: 10px;
+    display: inline-block;
+    color: #000;
+    background-color: rgba(180, 180, 180, 0.67);
+    transition: all .2s linear;
+}
+
+.pagination-bar .pagination-older a:hover, .pagination-bar .pagination-newer a:hover{
+    color: white;
+    background-color: #3877d9;
+}
+
+.pagination-bar .pagination-older + .pagination-newer {
+    float: right;
+}
+
 @media only screen and (max-width: 1090px) {
     .button-totop {
         display: none;
@@ -238,6 +213,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media only screen and (max-width: 760px) {
+    .pagination-bar {
+        width: 100%;
+    }
     .main-font {
         font-family: 'Merriweather Sans',Helvetica,Tahoma,Arial,'PingFang SC','Hiragino Sans GB','Microsoft Yahei','WenQuanYi Micro Hei',sans-serif;
     }

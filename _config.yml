@@ -1,9 +1,10 @@
 backgrounds:
-  - /img/1.jpg
-  - /img/2.jpg
-  - /img/3.jpg
-  - /img/4.jpg
-  - /img/5.jpg
+  - https://i.loli.net/2018/08/07/5b691474e1e2c.jpg
+  - https://i.loli.net/2018/08/07/5b69147dbeb36.jpg
+  - https://i.loli.net/2018/08/07/5b69147ee7d1f.jpg
+  - https://i.loli.net/2018/08/07/5b691486d368d.jpg
+  - https://i.loli.net/2018/08/07/5b691488c26a5.jpg
+
 
 navbar:
   - name: 首页

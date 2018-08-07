@@ -9,10 +9,34 @@
     <div class="scrollbar" id="sora-topbar"></div>
     <%- partial('_partial/navigator')%>
     <main class="main-font">
-        <% for (var index in page.posts.data) {%>
-        <% var post = page.posts.data[index]%>
-        <%- partial('_partial/article', {post: post, is_right: (index % 2 == 1)}) %>
-        <% } %>
+         <% for (var index in page.posts.data) {%>
+         <% var post = page.posts.data[index]%>
+         <%- partial('_partial/article', {post: post, is_right: (index % 2 == 1)}) %>
+         <% }%>
+
+         <% if (page.next && page.prev) { %>
+         <div class="pagination-bar">
+         <% } else {%>
+         <div class="pagination-bar pagination-one">
+         <% }%>
+            <% if (page.next) { %>
+            <div class="pagination-older">
+                <a class="" href="<%- url_for(page.next_link) %>">
+                    <i class="fa fa-angle-left"></i>
+                    <span>OLDER</span>
+                </a>
+            </div>
+            <% } %>
+
+            <% if (page.prev) { %>
+            <div class="pagination-newer">
+                <a class="" href="<%- url_for(page.prev_link) %>">
+                    <span>NEWER</span>
+                    <i class="fa fa-angle-right text-base icon-ml"></i>
+                </a>
+            </div>
+            <% } %>
+        </div>
         <hr />
         <%- partial('_partial/footer')%>
     </main>

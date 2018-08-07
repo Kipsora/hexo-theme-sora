@@ -6,7 +6,7 @@
     </div>
     <div class="article-content<% if (is_right) {%> article-content-right<% } %>">
         <div class="article-date"><i class="fa fa-clock-o"></i> 发布于 <%= date(post.date, null)%></div>
-        <h3 class="article-title"><a href="<%= post.path%>" target="_blank"><%= post.title%></a></h3>
+        <h3 class="article-title"><a href="<%= post.path%>"><%= post.title%></a></h3>
         <div class="article-meta">
             <% post.tags.forEach(function (tag){%>
             <span><i class="fa fa-tags"></i> <%= tag.name %></span>
