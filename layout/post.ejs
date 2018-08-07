@@ -1,0 +1,87 @@
+<link rel="stylesheet" type="text/css" href="<%= url_for('css/sora-content.css') %>" />
+<link href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/social-share.js/1.0.16/js/social-share.min.js"></script>
+<%- partial('_partial/screen', {'is_content_screen': true}) %>
+<div id="sora-content">
+    <div class="scrollbar" id="sora-topbar"></div>
+    <%- partial('_partial/navigator')%>
+    <main class="main-font">
+        <article>
+            <%- page.content %>
+        </article>
+        <div class="social-share"></div>
+        <% if (page.prev !== undefined && page.next !== undefined) { %>
+        <section class="post-adjacent">
+            <div class="post-adjacent-half">
+                <a href="<%=url_for(page.prev.path)%>">
+                    <div class="post-adjacent-bg">
+                        <img src="<%=url_for(page.prev.thumb) %>" />
+                    </div>
+                    <div class="post-adjacent-prev-info">
+                        <span>PREVIOUS POST</span>
+                        <h3><%= page.prev.title %></h3>
+                    </div>
+                </a>
+            </div>
+            <div class="post-adjacent-half">
+                <a href="<%=url_for(page.next.path)%>">
+                    <div class="post-adjacent-bg">
+                        <img src="<%=url_for(page.next.thumb) %>" />
+                    </div>
+                    <div class="post-adjacent-next-info">
+                        <span>NEXT POST</span>
+                        <h3><%= page.next.title %></h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <% } else if (page.prev !== undefined) { %>
+        <div class="post-adjacent">
+            <div style="width: 100%; height: 100%; float: left">
+                <a href="<%=url_for(page.prev.path)%>">
+                    <div class="post-adjacent-bg">
+                        <img src="<%=url_for(page.prev.thumb)%>" />
+                    </div>
+                    <div class="post-adjacent-prev-info">
+                        <span>PREVIOUS POST</span>
+                        <h3><%= page.prev.title %></h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <% } else if (page.next !== undefined) { %>
+        <div class="post-adjacent">
+            <div style="width: 100%; height: 100%; float: right">
+                <a href="<%=url_for(page.next.path)%>">
+                    <div class="post-adjacent-bg">
+                        <img src="<%=url_for(page.next.thumb)%>" />
+                    </div>
+                    <div class="post-adjacent-next-info">
+                        <span>NEXT POST</span>
+                        <h3><%= page.next.title %></h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <% } %>
+        <% if (page.comments) {%>
+        <div id="disqus_thread"></div>
+        <script>
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://kipsora.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <% } %>
+        <hr />
+        <%- partial('_partial/footer')%>
+    </main>
+    <button id="sora-totop" class="button-totop">
+        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+    </button>
+</div>
+<script src="<%= url_for('js/sora-content.js') %>"></script>
+<script src="<%= url_for('js/sora.js') %>"></script>

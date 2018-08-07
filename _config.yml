@@ -1,0 +1,26 @@
+backgrounds:
+  - /img/1.jpg
+  - /img/2.jpg
+  - /img/3.jpg
+  - /img/4.jpg
+  - /img/5.jpg
+
+navbar:
+  - name: 首页
+    icon: fa fa-home
+    url: /
+  - name: 归档
+    icon: fa fa-archive
+    url: /archives
+  - name: 标签
+    icon: fa fa-tags
+    url: /tags
+  - name: 分类
+    icon: fa fa-folder
+    url: /categories
+#  - name: 友人帐
+#    icon: fa fa-address-book
+#    url: /friends
+  - name: 关于我
+    icon: fa fa-user-secret
+    url: /about

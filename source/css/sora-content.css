@@ -1,0 +1,395 @@
+.post-bg {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
+    margin-top: 80px;
+}
+
+.post-info {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    max-width: 100%;
+    font-family: 'Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif;
+    width: 750px;
+}
+
+.post-title {
+    color: white;
+    text-shadow: 2px 2px 10px #000;
+    padding-top: 250px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.post-date {
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 10px #000;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.post-adjacent {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+}
+
+.post-adjacent a {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding: 55px 40px;
+    font-size: 15px;
+    height: 150px;
+    width: 100%;
+    background-color: black;
+}
+
+.post-adjacent .post-adjacent-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: .3;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    background-size: cover;
+}
+
+.post-adjacent .post-adjacent-half {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.post-adjacent .post-adjacent-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-adjacent div:hover .post-adjacent-bg {
+    opacity: .6;
+}
+
+.post-adjacent .post-adjacent-prev-info {
+    position: absolute;
+    z-index: 50;
+    color: white;
+    max-width: 80%;
+}
+
+.post-adjacent span {
+    color: rgba(220, 220, 220, 0.62);
+    font-size: 14px;
+}
+
+.post-adjacent h3 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.post-adjacent .post-adjacent-next-info {
+    position: absolute;
+    right: 40px;
+    z-index: 50;
+    color: white;
+    text-align: right;
+    max-width: 80%;
+}
+
+main {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.61);
+    padding: 1px 20px;
+}
+
+main article {
+    color: #797979;
+    margin-top: 30px;
+    line-height: 28px;
+    font-size: 16px;
+    font-family: 'Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif;
+    text-shadow: 0 0 1px rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
+}
+
+main article pre {
+    border-radius: 10px;
+}
+
+main article code {
+    background-color: rgba(27,31,35,0.05);
+    border-radius: 5px;
+    padding: 0.1rem 0.2rem;
+    font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number;
+}
+
+main article p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+main article a {
+    color: rgba(56, 119, 217, 0.86);
+    transition: all .2s linear;
+    text-decoration: underline dotted rgba(0,0,0,.1);
+}
+
+main article a:hover {
+    text-decoration: underline #3877d9;
+}
+
+main article h1 {
+    font-size: 32px;
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    color: #344c67;
+    position: relative;
+}
+
+main article h2 {
+    font-size: 28px;
+    margin-top: 1.2em;
+    margin-bottom: 0.8em;
+    position: relative;
+    padding-left: 1em;
+
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+}
+
+main article h3 {
+    font-size: 25px;
+    margin-top: 1.2em;
+    margin-bottom: 0.8em;
+    position: relative;
+}
+
+main article h2:after {
+    content: "#";
+    left: 0;
+    position: absolute;
+    color: #ff6d6d;
+}
+
+main article h4 {
+    font-size: 22px;
+    margin-top: 1.2em;
+    margin-bottom: 0.8em;
+    position: relative;
+}
+
+main article h5 {
+    font-size: 20px;
+    margin-top: 1.2em;
+    margin-bottom: 0.8em;
+    position: relative;
+}
+
+main article h6 {
+    font-size: 18px;
+    margin-top: 1.2em;
+    margin-bottom: 0.8em;
+    position: relative;
+}
+
+main article blockquote {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    background-color: rgba(156, 156, 156, 0.24);
+    font-style: italic;
+    width: 100%;
+    padding-left: 15px;
+    line-height: 3;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+main article blockquote > * {
+    display: inline;
+}
+
+main article blockquote:before {
+    content: ">";
+    /*left: 0;*/
+    color: #ff6d6d;
+    margin-right: 10px;
+}
+
+main article ol li {
+    margin-bottom: 15px;
+}
+
+main article ul li {
+    margin-bottom: 8px;
+}
+
+/*********************************************************************************************************************/
+
+.nav {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.82);
+}
+
+.nav .nav-container * {
+    color: black;
+}
+
+.nav .nav-brand .nav-emphasize-box {
+    background: rgba(255, 255, 255, 0.0);
+}
+
+.nav .nav-container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.nav .nav-brand {
+    padding-top: 27px;
+    padding-left: 35px;
+    font-family: 'Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif;
+    font-weight: 800;
+    font-size: 20px;
+    float: left;
+    animation: 1s ease-out 0s 1 slide-in-left;
+}
+
+.nav .nav-brand a {
+    color: white;
+}
+
+.nav .nav-brand .nav-emphasize-box {
+    background: rgba(255, 255, 255, 0.29);
+    border-radius: 5px;
+}
+
+.nav .nav-brand:hover * {
+    color: #3877d9;
+}
+
+.nav .nav-brand * {
+    transition: all .2s linear;
+}
+
+.nav .nav-brand:hover .nav-emphasize-box {
+    background: #3877d9;
+}
+
+.nav .nav-brand:hover .nav-emphasize-box * {
+    color: white;
+}
+
+.nav .nav-brand:hover .nav-emphasize-box rt {
+    color: #3877d9;
+}
+
+.nav .nav-items {
+    float: right;
+    animation: 1s ease-out 0s 1 slide-in-right;
+}
+
+.nav .nav-items > * {
+    font-family: 'Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif;
+    font-size: 16px;
+    color: white;
+    margin-right: 20px;
+    font-weight: 800;
+    padding-top: 29px;
+    padding-bottom: 29px;
+    display: inline-block;
+    position: relative;
+}
+
+.nav .nav-items * {
+    transition: all .2s ease-in-out;
+}
+
+.nav .nav-items > *:hover * {
+    color: #3877d9;
+}
+
+@media only screen and (min-width: 760px) {
+    .nav .nav-items > *:hover:after {
+        max-width: 100%;
+    }
+
+    .nav .nav-items > *:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        height: 6px;
+        background-color: #3877d9;
+        width: 100%;
+        max-width: 0;
+        transition: max-width .2s ease-in-out;
+    }
+}
+
+.nav .nav-items span {
+    cursor: pointer;
+}
+
+.nav-scroll-down {
+    background: rgba(255, 255, 255, 0.82);
+}
+
+.nav-scroll-down .nav-container * {
+    color: black;
+}
+
+.nav-scroll-down .nav-brand .nav-emphasize-box {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+@media only screen and (max-width: 760px) {
+    .nav .nav-brand {
+        padding-left: 5px;
+    }
+
+    .nav .nav-items > * {
+        margin-right: 20px;
+    }
+
+    .nav .nav-items .nav-text {
+        display: none;
+    }
+    .post-title {
+        font-size: 32px;
+    }
+    .post-info {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .post-adjacent .post-adjacent-half {
+        float: none;
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 380px) {
+    .nav .nav-items > * {
+        margin-right: 12px;
+    }
+}

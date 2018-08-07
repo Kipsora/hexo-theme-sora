@@ -1,0 +1,24 @@
+<%- partial('_partial/screen', {'is_content_screen': false}) %>
+<link rel="stylesheet" type="text/css" href="<%= url_for('css/sora-main.css')%>" />
+<!--<style lang="text/css">-->
+    <!--body {-->
+        <!--background: url("<%= url_for('img/weather2.png') %>") fixed;-->
+    <!--}-->
+<!--</style>-->
+<div id="sora-content">
+    <div class="scrollbar" id="sora-topbar"></div>
+    <%- partial('_partial/navigator')%>
+    <main class="main-font">
+        <% for (var index in page.posts.data) {%>
+        <% var post = page.posts.data[index]%>
+        <%- partial('_partial/article', {post: post, is_right: (index % 2 == 1)}) %>
+        <% } %>
+        <hr />
+        <%- partial('_partial/footer')%>
+    </main>
+    <button id="sora-totop" class="button-totop">
+        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+    </button>
+</div>
+<script src="<%= url_for('js/sora-main.js') %>"></script>
+<script src="<%= url_for('js/sora.js') %>"></script>
