@@ -8,7 +8,7 @@ Current released version are `0.9.0`, and you can see the usage to gain more det
 ```bash
 # Go to the root directory of your hexo blog
 cd /path/to/your/blog
-git clone https://github.com/kipsora/hexo-sora.git themes/sora
+git clone https://github.com/kipsora/hexo-theme-sora.git themes/sora
 # Install necessary plugins
 npm install --save hexo-prism-plugin
 npm install --save hexo-front-matter-excerpt
