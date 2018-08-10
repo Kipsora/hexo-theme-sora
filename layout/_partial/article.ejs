@@ -1,6 +1,6 @@
 <article title="<%= post.title%>">
     <div class="article-thumb<% if (is_right) {%> article-thumb-right<% } %>">
-        <a href="<%= post.path%>" target="_blank">
+        <a href="<%= post.path%>">
             <img src="<%= url_for(post.thumb) %>" class="article-img" alt="<%= post.title %>" />
         </a>
     </div>

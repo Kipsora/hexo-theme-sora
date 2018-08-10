@@ -206,6 +206,10 @@ body::-webkit-scrollbar-thumb {
     float: right;
 }
 
+div.aplayer {
+    margin: 40px 0;
+}
+
 @media only screen and (max-width: 1090px) {
     .button-totop {
         display: none;
