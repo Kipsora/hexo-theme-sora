@@ -1,0 +1,215 @@
+@import "constant.styl"
+@import "dynamic.styl"
+@import "devices.styl"
+
+.post-bg
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 400px;
+  margin-top: 80px;
+
+.post-info
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  max-width: 100%;
+  font-family: font-serif
+  width: 750px;
+
+.post-title
+  color: white;
+  text-shadow: 2px 2px 10px #000;
+  padding-top: 260px;
+  font-size: 36px;
+  font-weight: 500;
+
+.post-date
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 10px #000;
+  font-size: 14px;
+  margin-top: 8px;
+
+.post-adjacent
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  a
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding: 55px 40px;
+    font-size: 15px;
+    height: 150px;
+    width: 100%;
+    background-color: black;
+  .post-adjacent-bg
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: .3;
+    background-size: cover;
+    show-transition(all .3s)
+    img
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  .post-adjacent-half
+    float: left;
+    width: 50%;
+    height: 100%;
+  div:hover .post-adjacent-bg
+    opacity: .6
+  .post-adjacent-prev-info
+    position: absolute;
+    z-index: 50;
+    color: white;
+    max-width: 80%;
+  .post-adjacent-next-info
+    position: absolute;
+    right: 40px;
+    z-index: 50;
+    color: white;
+    text-align: right;
+    max-width: 80%;
+  span
+    color: rgba(220, 220, 220, 0.62);
+    font-size: 14px;
+  h3
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 5px;
+
+@media $media-max-phone
+  .post-title {
+    font-size: 32px;
+  }
+  .post-info {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .post-adjacent .post-adjacent-half {
+    float: none;
+    width: 100%;
+  }
+
+main
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.61);
+  padding: 1px 20px;
+  article
+    color: #797979;
+    margin-top: 30px;
+    line-height: 28px;
+    font-size: 16px;
+    /*font-family: 'Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif;*/
+    text-shadow: 0 0 1px rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
+    pre
+      border-radius: 10px;
+    code
+      background-color: rgba(27,31,35,0.05);
+      border-radius: 5px;
+      padding: 0.1rem 0.2rem;
+      font-family: font-eqwidth
+    p
+      margin-top: 1em;
+      margin-bottom: 1em;
+    a
+      color: rgba(56, 119, 217, 0.86);
+      transition: all .2s linear;
+      text-decoration: underline dotted rgba(0,0,0,.1);
+      &:hover
+        text-decoration: underline main-color
+    h1,h2,h3,h4,h5,h6
+      margin-top: 1em;
+      margin-bottom: 0.8em;
+      position: relative;
+    h1
+      font-size: 32px;
+      color: #344c67;
+    h2
+      font-size: 28px;
+      padding-left: 1em;
+
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #ddd;
+      &:after
+        content: "#";
+        left: 0;
+        position: absolute;
+        color: #ff6d6d;
+    h3
+      font-size: 25px;
+    h4
+      font-size: 22px;
+    h5
+      font-size: 20px;
+    h6
+      font-size: 18px;
+    blockquote
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-radius: 5px;
+      background-color: rgba(156, 156, 156, 0.24);
+      font-style: italic;
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+      line-height: 2;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      .has-jax
+        line-height: 3;
+      > *
+        display: inline;
+      &:before
+        content: ">";
+        color: #ff6d6d;
+        margin-right: 10px;
+    ol li
+      margin-bottom: 15px;
+    ul li
+      margin-bottom: 8px;
+
+.footer
+  text-align: center;
+  color: rgba(148, 148, 148, 0.79);
+  margin-bottom: 15px;
+  margin-top: 25px;
+  font-size: 13px;
+  font-family: 'Ubuntu', sans-serif;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.73);
+  padding: 1px 20px;
+
+  #copyright i
+    color: dodgerblue
+  hr
+    border-color: rgba(197, 197, 197, 0.27);
+  & > div
+    margin-top: 0.7em;
+  a
+    color: rgb(79, 79, 79);
+  p
+    margin-top: 5px;
+  img
+    height: 1.2em;
+    max-height: 1.2em;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0;
+
+.navbar
+  top: 0

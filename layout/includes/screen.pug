@@ -1,0 +1,16 @@
+mixin generate_screen(is_post)
+    if is_post
+        div#sora-screen(style="position: relativce;")
+            figure#sora-screen-img.post-bg(style="background-image: url('" + url_for(page.thumb) + "')")
+                div.post-info
+                    h1.post-title=page.title
+                    div.post-date
+                        i.fa.fa-clock-o
+                        | 发布于 #[=date(page.date, null)]
+    else
+        div
+            figure#sora-screen.welcome
+                button#sora-screen-prev.screen-prev
+                    i.fa.fa-chevron-left(aria-hidden="true")
+                button#sora-screen-next.screen-next
+                    i.fa.fa-chevron-right(aria-hidden="true")

@@ -1,0 +1,44 @@
+- var pageTitle = title || page.title || config.subtitle || ''
+- pageTitle += pageTitle ? ' | ' + config.title : config.title
+- var script_cdns = theme.cdns ? theme.cdns.script : []
+- var backgrounds = theme.backgrounds || ""
+
+doctype html
+head
+    meta(charset='utf-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+    title=pageTitle
+    include head.pug
+    block head
+    link(rel="stylesheet" href=url_for("css/sora.css"))
+body
+    div#main-container(style="display: none")
+        include navigation.pug
+        block content
+        button#sora-totop.button-totop
+            i.fa.fa-angle-double-up(aria-hidden="true")
+        include footer.pug
+    each cdn in script_cdns
+        script(src!=cdn)
+    script try{Typekit.load({ async: true });}catch(e){}
+    script(type="text/x-mathjax-config").
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["$$","$$"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          },
+          CommonHTML: { linebreaks: { automatic: true } },
+          "HTML-CSS": { linebreaks: { automatic: true } },
+                 SVG: { linebreaks: { automatic: true } }
+        });
+        MathJax.Hub.Queue(function() {
+          var all = MathJax.Hub.getAllJax(), i;
+          for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+          }
+        });
+    script(src=url_for('/js/sora.js'))
+    if theme.mouse_effect
+        script(type="text/javascript" src=url_for('/js/clicklove.js'))
+    block bottom

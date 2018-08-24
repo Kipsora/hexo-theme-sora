@@ -1,0 +1,63 @@
+extends includes/layout.pug
+
+block head
+    link(rel="stylesheet" href=url_for("css/sora-index.css"))
+
+block content
+    include includes/screen.pug
+    +generate_nav(false)
+    +generate_screen(false)
+    main
+        each post, index in page.posts.data
+            article(title=post.title)
+                if index % 2 === 0
+                    div.article-thumb
+                        a(href=url_for(post.path))
+                            img.article-img(src=url_for(post.thumb) alt=post.title)
+                    div.article-content
+                        div.article-date
+                            i.fa.fa-clock-o
+                            | 发布于 #[=date(post.date, null)]
+                        h3.article-title
+                            a(href=url_for(post.path))=post.title
+                        div.article-meta
+                            each tag in post.tags.data
+                                span
+                                    i.fa.fa-tags
+                                    =' ' + tag.name
+                            each category in post.categories.data
+                                span
+                                    i.fa.fa-folder
+                                    =' ' + category.name
+                        div.article-description!=post.excerpt
+                        div.article-bottom
+                            a(href=url_for(post.path)) Read on &raquo;
+                else
+                    div.article-thumb.article-thumb-right
+                        a(href=url_for(post.path))
+                            img.article-img(src=url_for(post.thumb) alt=post.title)
+                    div.article-content.article-content-right
+                        div.article-date
+                            i.fa.fa-clock-o
+                            | 发布于 #[=date(post.date, null)]
+                        h3.article-title
+                            a(href=url_for(post.path))=post.title
+                        div.article-meta
+                            each tag in post.tags.data
+                                span
+                                    i.fa.fa-tags
+                                    =' ' + tag.name
+                            each category in post.categories.data
+                                span
+                                    i.fa.fa-folder
+                                    =' ' + category.name
+                        div.article-description!=post.excerpt
+                        div.article-bottom
+                            a(href=url_for(post.path)) Read on &raquo;
+            include includes/pagination.pug
+
+
+block bottom
+    script(src=url_for('/js/sora-index.js'))
+    script(src=url_for('/js/sora-screen.js'))
+    script load_background("#[!=backgrounds]")

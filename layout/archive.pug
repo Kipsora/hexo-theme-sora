@@ -1,0 +1,184 @@
+extends includes/layout.pug
+
+block head
+    link(rel="stylesheet" href=url_for("css/sora-page.css"))
+
+block content
+    +generate_nav(true)
+    -
+        var stat = {};
+        page.posts.sort('date').reverse().forEach(function(post){
+        var date = post.date;
+        var year = date.year();
+        var month = date.month() + 1;
+        var day = date.date();
+        if(stat[year] === undefined){
+        stat[year] = {};
+        }
+        if (stat[year][month] === undefined) {
+        stat[year][month] = {};
+        stat[year][month].counter = 0;
+        }
+        if (stat[year][month][day] === undefined) {
+        stat[year][month][day] = [];
+        }
+        stat[year][month].counter += 1;
+        stat[year][month][day].push(post);
+        });
+    style.
+        main {
+            margin-top: 80px;
+        }
+
+        main header {
+            position: relative;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #9c9c9c;
+            display: block;
+        }
+
+        main header h1 {
+            display: inline-block;
+            font-size: 25px;
+            font-weight: 400;
+            padding-right: 15px;
+            border-right: 1px dashed #ddd;
+            color: #676767;
+            clear: both;
+            margin: .67em 0;
+        }
+
+        main header p {
+            display: inline-block;
+            padding-left: 10px;
+            margin-bottom: 1.5em;
+        }
+
+        main #sora-archive h3 {
+            padding-left: 100px;
+        }
+
+        main #sora-archive > ul {
+            position: relative;
+            padding: 10px 0;
+        }
+
+        main #sora-archive > ul:before {
+            width: 4px;
+            background: #6ecaf5;
+            position: absolute;
+            left: 120px;
+            top: 0;
+            content: "";
+            max-height: 100%;
+            height: 100%;
+        }
+
+        main #sora-archive > ul > li {
+            list-style: none;
+            display: list-item;
+        }
+
+        main #sora-archive > ul > li > span {
+            position: relative;
+            display: block;
+        }
+
+        main #sora-archive > ul > li > span:before {
+            position: absolute;
+            left: 113px;
+            background: #ffffff;
+            height: 18px;
+            width: 18px;
+            border-radius: 9px;
+            top: 3px;
+            content: "";
+            box-shadow: 1px 1px 2px rgba(92, 92, 92, 0.87);
+        }
+
+        main #sora-archive > ul > li > span:after {
+            position: absolute;
+            left: 116px;
+            background: #0bf;
+            height: 12px;
+            width: 12px;
+            border-radius: 6px;
+            top: 6px;
+            content: "";
+        }
+
+        main #sora-archive a {
+            color: black;
+            transition: all .2s linear;
+        }
+
+        main #sora-archive a:hover {
+            color: #3877d9;
+        }
+
+        main #sora-archive > ul > li > ul > li {
+            list-style: none;
+            padding-left: 100px;
+            position: relative;
+        }
+
+        main #sora-archive > ul > li > ul > li:before {
+            position: absolute;
+            left: 76px;
+            background: rgb(255, 255, 255);
+            height: 12px;
+            width: 12px;
+            border-radius: 6px;
+            top: 6px;
+            content: "";
+            box-shadow: 1px 1px 2px rgba(92, 92, 92, 0.87);
+        }
+
+        main #sora-archive > ul > li > ul > li:after {
+            position: absolute;
+            left: 78px;
+            background: #0bf;
+            height: 8px;
+            width: 8px;
+            border-radius: 4px;
+            top: 8px;
+            content: "";
+        }
+
+        main #sora-archive > ul > li > ul > li span {
+            margin-right: 15px;
+        }
+    main
+        if page.tag
+            header.page-header
+                h1 标签归档
+                p
+                    i.fa.fa-tags(aria-hidden="true")
+                    = ' ' + page.tag + ' Archives'
+        else if page.category
+            h1 分类归档
+            p
+                i.fa.fa-tags(aria-hidden="true")
+                = ' ' + page.category + ' Archives'
+        else
+            header.page-header
+                h1 归档
+                p
+                    i.fa.fa-archive(aria-hidden="true")
+                    = ' Archives'
+        div#sora-archive
+            each year_post, year in stat
+                h3=year + ' 年'
+                ul
+                    li
+                        each month_post, month in year_post
+                            span #[=month] 月 (#[span#post-num #[=month_post.counter] 篇文章])
+                            ul
+                                each day_post, day in month_post
+                                    if day_post !== undefined
+                                        each post in day_post
+                                            li
+                                                a(href=url_for(post.path))
+                                                    span(style="color:#0bf;") #[=day] 日
+                                                    =post.title

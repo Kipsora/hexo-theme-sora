@@ -1,0 +1,10 @@
+- var sponsors = config.sponsors || theme.sponsors || []
+div.footer
+    hr
+    div#copyright
+        p Crafted with #[i.fa.fa-heart(aria-hidden="true")] by Kipsora | Powered by #[a(href="https://hexo.io" target="_blank") Hexo]
+        p Copyright © 2018 by #[=config.author]
+    div#sponsors
+        each sponsor in sponsors
+            a(href=sponsor.url target="_blank" rel="nofollow")
+                img(src=url_for(sponsor.imgurl) alt=sponsor.alt)

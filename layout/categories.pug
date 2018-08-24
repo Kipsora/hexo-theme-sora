@@ -1,0 +1,77 @@
+extends includes/layout.pug
+
+block head
+    link(rel="stylesheet" href=url_for("css/sora-page.css"))
+
+block content
+    +generate_nav(true)
+    -
+        var stat = {};
+        site.posts.forEach(function(post) {
+        post.categories.forEach(function(category) {
+        if (stat[category.name] === undefined) {
+        stat[category.name] = category;
+        }
+        });
+        });
+    style.
+        main {
+            margin-top: 80px;
+        }
+
+        main header {
+            position: relative;
+            text-align: center;
+            color: #9c9c9c;
+            display: block;
+        }
+
+        main header h1 {
+            display: inline-block;
+            font-size: 25px;
+            font-weight: 400;
+            padding-right: 15px;
+            border-right: 1px dashed #ddd;
+            color: #676767;
+            clear: both;
+            margin: .67em 0;
+        }
+
+        main header p {
+            display: inline-block;
+            padding-left: 10px;
+            margin-bottom: 1.5em;
+        }
+
+        main #sora-categories {
+            /*width: 500px;*/
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 2em;
+        }
+
+        main #sora-categories span {
+            font-weight: normal;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        main #sora-categories a {
+            color: black;
+            transition: all .2s linear;
+        }
+
+        main #sora-categories a:hover {
+            color: #3877d9;
+        }
+    main
+        header.page-header
+            h1 分类
+            p Categories
+            div#sora-categories.font-meta-serif
+                each category in stat
+                    span
+                        a(href=url_for(category.path))
+                            i.fa.fa-folder(aria-hidden="true")
+                            = ' ' + category.name + '(' + category.posts.length + ' 篇文章)'

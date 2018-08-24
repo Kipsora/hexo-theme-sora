@@ -1,0 +1,50 @@
+extends includes/layout.pug
+
+block head
+    link(rel="stylesheet" type="text/css" href=url_for('css/sora-page.css'))
+
+block content
+    include includes/screen.pug
+    +generate_nav(true)
+    +generate_screen(true)
+    main
+        article!=page.content
+        div.social-share
+        if page.prev !== undefined && page.next !== undefined
+            div.post-adjacent
+                div.post-adjacent-half
+                    a(href=page.prev.path)
+                        div.post-adjacent-bg
+                            img(src=url_for(page.prev.thumb))
+                        div.post-adjacent-prev-info
+                            span PREVIOUS POST
+                            h3=page.prev.title
+                div.post-adjacent-half
+                    a(href=page.next.path)
+                        div.post-adjacent-bg
+                            img(src=url_for(page.next.thumb))
+                        div.post-adjacent-next-info
+                            span NEXT POST
+                            h3=page.next.title
+        else if page.prev !== undefined
+            div.post-adjacent
+                div(style="width: 100%; height: 100%; float: left")
+                    a(href=url_for(page.prev.path))
+                        div.post-adjacent-bg
+                            img(src=url_for(page.prev.thumb))
+                        div.post-adjacent-prev-info
+                            span PREVIOUS POST
+                            h3=page.prev.title
+        else if page.next !== undefined
+            div.post-adjacent
+                div(style="width: 100%; height: 100%; float: left")
+                    a(href=url_for(page.next.path))
+                        div.post-adjacent-bg
+                            img(src=url_for(page.next.thumb))
+                        div.post-adjacent-next-info
+                            span PREVIOUS POST
+                            h3=page.next.title
+        include includes/comment.pug
+
+block bottom
+    script(src=url_for('/js/sora-page.js'))

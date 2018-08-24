@@ -1,0 +1,61 @@
+- var nav_items = config.navitems || theme.navitems || []
+- var nav_brand_bgcol = config.navbrandfront || theme.navbrandfront || "<ruby>青<rp></rp><rt>あお</rt><rp></rp>い</ruby>"
+- var nav_brand_plain = config.navbrandtail  || theme.navbrandtail || "<ruby>空<rp></rp><rt>そら</rt><rp></rp>へ</ruby>"
+
+mixin generate_nav(fixed)
+    if (!fixed)
+        div#sora-navbar.navbar.font-serif
+            div#sora-navbar-content.navbar-content
+                div#sora-navbar-brand-wrapper.navbar-brand
+                    a(href=url_for('/'))
+                        span!=nav_brand_bgcol
+                        span!=nav_brand_plain
+                button#sora-navbar-button.navbar-phone-button
+                    div.navbar-phone-button-icon
+                ul#sora-navbar-main.navbar-items.phone-hidden
+                    each entry in nav_items
+                        li.navbar-item
+                            a(href=entry.url)
+                                if entry.hasOwnProperty('icon')
+                                    i(class=entry.icon + " hvr-icon" aria-hidden="true")
+                                    |  #[=entry.text]
+                                else
+                                    | #[=entry.text]
+                            if entry.subitems
+                                ul.navbar-subitems
+                                    each subentry in entry.subitems
+                                        li.navbar-subitem
+                                            a(href=subentry.url)
+                                                if subentry.hasOwnProperty('icon')
+                                                    i(class=subentry.icon + " hvr-icon" aria-hidden="true")
+                                                    |  #[=subentry.text]
+                                                else
+                                                    | #[=subentry.text]
+    else
+        div#sora-navbar.navbar.navbar-hover.font-serif
+            div#sora-navbar-content.navbar-content
+                div#sora-navbar-brand-wrapper.navbar-brand
+                    a(href=url_for('/'))
+                        span!=nav_brand_bgcol
+                        span!=nav_brand_plain
+                button#sora-navbar-button.navbar-phone-button
+                    div.navbar-phone-button-icon
+                ul#sora-navbar-main.navbar-items.phone-hidden
+                    each entry in nav_items
+                        li.navbar-item
+                            a(href=entry.url)
+                                if entry.hasOwnProperty('icon')
+                                    i(class=entry.icon + " hvr-icon" aria-hidden="true")
+                                    |  #[=entry.text]
+                                else
+                                    | #[=entry.text]
+                            if entry.subitems
+                                ul.navbar-subitems
+                                    each subentry in entry.subitems
+                                        li.navbar-subitem
+                                            a(href=subentry.url)
+                                                if subentry.hasOwnProperty('icon')
+                                                    i(class=subentry.icon + " hvr-icon" aria-hidden="true")
+                                                    |  #[=subentry.text]
+                                                else
+                                                    | #[=subentry.text]

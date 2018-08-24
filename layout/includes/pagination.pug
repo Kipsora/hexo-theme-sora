@@ -1,0 +1,22 @@
+if page.next && page.prev
+    div.pagination-bar
+        div.pagination-older
+            a(href=url_for(page.next_link))
+                i.fa.fa-angle-left
+                span=" OLDER"
+        div.pagination-newer
+            a(href=url_for(page.prev_link))
+                span="NEWER "
+                i.fa.fa-angle-right.text-base.icon-ml
+else if page.next
+    div.pagination-bar.pagination-one
+        div.pagination-older
+            a(href=url_for(page.next_link))
+                i.fa.fa-angle-left
+                span=" OLDER"
+else if page.prev
+    div.pagination-bar.pagination-one
+        div.pagination-newer
+            a(href=url_for(page.prev_link))
+                span="NEWER "
+                i.fa.fa-angle-right.text-base.icon-ml

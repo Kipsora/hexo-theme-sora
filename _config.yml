@@ -1,27 +1,86 @@
+navitems:
+  home:
+    text: 首页
+    url: /
+    icon: fa fa-home
+#  lists:
+#    text: 清单
+#    icon: fa fa-list
+#    subitems:
+#      anime:
+#        text: 番剧
+#        icon: fa fa-film
+#      book:
+#        text: 书籍
+#        icon: fa fa-book
+  archive:
+    text: 归档
+    url: /archives
+    icon: fa fa-archive
+    subitems:
+      tags:
+        text: 标签
+        icon: fa fa-tags
+        url: /tags
+      category:
+        text: 分类
+        icon: fa fa-folder
+        url: /categories
+#  money:
+#    text: 打赏
+#    icon: fa fa-gift
+#  friends:
+#    text: 友人账
+#    icon: fa fa-link
+  about:
+    text: 关于
+    icon: fa fa-question-circle
+    subitems:
+      me:
+        text: 我
+        url: /about/me
+        icon: fa fa-user-circle-o
+
+cdns:
+  script:
+    jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
+    aplayer: //cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js
+    meting: //cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js
+    mathjax: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    typekit: //use.typekit.net/yqo7yxr.js
+    share: //cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js
+  style:
+    aplayer: //cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css
+    font-awesome: //stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+    googlefont: //fonts.googleapis.com/css?family=Merriweather%7CMerriweather+Sans%7CNoto+Serif%7CSource+Code+Pro%7CUbuntu:400,700
+    hover: //cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css
+    share: //cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css
+
+sponsors:
+  google:
+    imgurl: /img/google.svg
+    url: https://www.google.com/intl/ja/analytics/
+    alt: Google
+  github:
+    imgurl: /img/github.png
+    url: https://github.com
+    alt: Github
+  disqus:
+    imgurl: /img/disqus.svg
+    url: https://disqus.com
+    alt: Disqus
+  pixiv:
+    imgurl: /img/pixiv.png
+    url: https://pixiv.net
+    alt: Pixiv
+
+google_analytics: UA-117925756-4
+disqus_script: https://kipsora.disqus.com/embed.js
+mouse_effect: true
+
 backgrounds:
   - https://i.loli.net/2018/08/07/5b691474e1e2c.jpg
   - https://i.loli.net/2018/08/07/5b69147dbeb36.jpg
   - https://i.loli.net/2018/08/07/5b69147ee7d1f.jpg
   - https://i.loli.net/2018/08/07/5b691486d368d.jpg
   - https://i.loli.net/2018/08/07/5b691488c26a5.jpg
-
-
-navbar:
-  - name: 首页
-    icon: fa fa-home
-    url: /
-  - name: 归档
-    icon: fa fa-archive
-    url: /archives
-  - name: 标签
-    icon: fa fa-tags
-    url: /tags
-  - name: 分类
-    icon: fa fa-folder
-    url: /categories
-#  - name: 友人帐
-#    icon: fa fa-address-book
-#    url: /friends
-  - name: 关于我
-    icon: fa fa-user-secret
-    url: /about

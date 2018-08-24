@@ -1,0 +1,367 @@
+@import "constant.styl"
+@import "dynamic.styl"
+@import "devices.styl"
+
+*
+  margin 0
+  box-sizing border-box
+
+body
+  background-color white
+
+a
+  text-decoration none
+
+.fadein
+  animation: 1s ease-out 0s 1 fade-in;
+
+.font-serif
+  font-family font-serif
+
+.font-sans-chinese
+  font-family font-sans-chinese
+
+.font-sans-japanese
+  font-family font-sans-japanese
+
+.font-meta-serif
+  font-family font-meta-serif
+
+.welcome
+  height 100vh
+  width 100%
+  background-position center center;
+  background-attachment fixed;
+  background-size cover;
+  background-repeat no-repeat;
+  transition background-image 0.4s ease-in-out;
+  @media $media-max-tablet
+    background-attachment: scroll;
+
+.screen-prev
+  outline: none
+  border: none
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6))
+  height: 100%
+  width: 100px
+  position: absolute
+  padding: 0
+  opacity: 0
+  color: rgba(255, 255, 255, 0.76)
+  font-size: 32px
+  text-align: center
+  left: 0
+
+  transition: all .3s
+  cursor: pointer;
+  &:hover
+    opacity: 1
+
+.screen-next
+  outline: none;
+  border: none;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  height: 100%;
+  width: 100px;
+  position: absolute;
+  padding: 0;
+  opacity: 0;
+  color: white;
+  font-size: 32px;
+  text-align: center;
+  right: 0;
+
+  transition: all .3s;
+  cursor: pointer;
+
+  &:hover
+    opacity: 1;
+
+.navbar
+  height nav-height
+  width 100%
+  position fixed
+  z-index 100
+  show-transition(all .2s linear)
+
+  .navbar-content
+    height 100%
+    padding-left nav-content-padding
+    padding-right nav-content-padding
+
+    .navbar-brand
+      float left
+      padding-top  ((nav-height - nav-brand-ruby-text-height) / 2)
+      padding-bottom ((nav-height - nav-brand-ruby-text-height) / 2)
+      padding-left 40px
+      font-weight 800
+      font-size nav-brand-font-size
+      font-family font-serif
+      show-animation(1s ease-out 0s 1 slide-in-left)
+      a
+        color white
+      @media $media-max-tablet
+        padding-left 20px
+      @media $media-max-phone
+        padding-left 0
+
+
+      span:first-child
+        border-radius 5px
+        background-color rgba(255, 255, 255, 0.29)
+
+    .navbar-items
+      float right
+      height 100%
+      padding-right 40px
+      padding-left 0
+      list-style none
+      @media $media-max-tablet
+        padding-right 20px
+      @media $media-max-phone
+        padding-right 0
+      .navbar-item
+        show-animation(1s ease-out 0s 1 slide-in-right)
+        position relative
+        display inline-block
+        margin-left 25px
+        > a
+          font-size 17px
+          display block
+          padding-top (floor((nav-height - nav-items-text-height) / 2))
+          padding-bottom (ceil((nav-height - nav-items-text-height) / 2))
+          color white
+          &:after
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            height: 6px;
+            background-color: main-color;
+            width: 100%;
+            max-width: 0;
+            transition: max-width .2s ease-in-out;
+        .navbar-subitems
+          border black
+          position absolute
+          list-style none
+          padding 10px
+          width 80px
+          left -10px
+          top 70px
+          background-color white
+          border-radius 10px
+          z-index 200
+          box-shadow 0 -1px 40px -8px rgba(0,0,0,.5)
+          text-align center
+          display none
+          show-animation(0.5s ease-out 0s 1 slide-in-down)
+          .navbar-subitem
+            padding-top  10px
+            padding-bottom  10px
+            margin 0
+            > a
+              &, i
+                show-transition(all .2s linear)
+            > a:hover
+              &, i
+                color main-color
+
+          &:before
+            content ""
+            position absolute
+            top -20px
+            left 50%
+            margin-left -10px
+            border-width 10px
+            border-style solid
+            border-color transparent transparent #fff transparent
+            box-sizing inherit
+
+      @media $media-max-phone
+        position absolute
+        top 80px
+        right nav-content-padding
+        height auto
+        float right
+        background-color white
+        border-radius 10px
+        padding 10px 20px
+        box-shadow 0 -1px 40px -8px rgba(0,0,0,.5)
+        min-width 120px
+        show-animation(0.5s ease-out 0s 1 slide-in-down)
+        &:before
+          content ""
+          position absolute
+          top -20px
+          right 15px
+          margin-left -10px
+          border-width 10px
+          border-style solid
+          border-color transparent transparent #fff transparent
+          box-sizing inherit
+
+        .navbar-item
+          display list-item
+          margin 0
+          show-animation(none)
+          > a
+            color black
+            padding-top 10px
+            padding-bottom 10px
+            &:after
+              display none
+          .navbar-subitems
+            position absolute
+            top -8px
+            left -100px
+            show-animation(0.5s ease-out 0s 1 slide-in-small-left)
+            &:before
+              margin-left auto
+              border-color transparent transparent transparent white
+              right -20px
+              left auto
+              top 22px
+
+    .navbar-phone-button
+      display none
+      height nav-button-size
+      width nav-button-size
+      margin-top ((nav-height - nav-button-size) / 2)
+      background-color transparent
+      border none
+      outline: 0
+      float right
+      transition none
+      @media $media-max-phone
+        display inline-block
+
+      .navbar-phone-button-icon
+        position relative
+        width 28px
+        height 4px
+        background white
+        margin auto
+        &:before
+          content ""
+          position absolute
+          left 0
+          width 28px
+          height 4px
+          top -8px
+          background white
+        &:after
+          content ""
+          position absolute
+          left 0
+          width 28px
+          height 4px
+          bottom -8px
+          background white
+
+  &.navbar-hover, &:hover
+    background-color rgba(255, 255, 255, 0.9)
+    .navbar-content
+      *
+        color black
+      .navbar-brand
+        *
+          show-transition(all .2s linear)
+        a:hover
+          color black
+          *
+            color main-color
+          span:first-child
+            background-color main-color
+            *
+              color white
+            rt
+              color main-color
+
+      .navbar-item
+        > a
+          color black
+        &:hover
+          > a, > a i
+            color main-color
+            show-transition(all .2s linear)
+          > a:after
+            max-width: 100%;
+        &:hover .navbar-subitems
+          display inline-block
+
+      .navbar-phone-button
+        .navbar-phone-button-icon
+          &, &:before, &:after
+            background-color black
+
+body
+  &::-webkit-scrollbar
+    width 5px
+  &::-webkit-scrollbar-track
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  &::-webkit-scrollbar-thumb
+    background-color: main-color;
+    outline: 1px solid slategrey;
+
+.button-totop
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(208, 208, 208, 0.91);
+  outline:none;
+  border: 2px;
+  border-radius: 10px;
+  font-size: 30px;
+  cursor: pointer;
+
+  opacity: 1;
+  visibility: visible;
+  show-transition(opacity 600ms\, visibility 600ms)
+
+  &:active
+    color: black;
+  &:hover
+    animation-duration: 0.3s;
+    animation-name: jump;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+
+  @media $media-max-tablet
+    display: none;
+
+
+.phone-hidden
+  @media $media-max-phone
+    display none
+.opacity-hidden
+  visibility hidden
+  opacity 0
+@media $media-max-phone
+  canvas
+    display none
+.pagination-one
+  text-align: center;
+.pagination-bar
+  width: 60%;
+  margin: 50px auto 30px auto;
+  .pagination-older, .pagination-newer
+    display: inline-block;
+    font-size: 20px;
+    a
+      padding: 15px 25px 15px 25px;
+      border-radius: 10px;
+      display: inline-block;
+      color: #000;
+      background-color: rgba(180, 180, 180, 0.67);
+      transition: all .2s linear;
+      &:hover
+        color: white;
+        background-color: main-color
+  .pagination-older + .pagination-newer
+    float right
+  @media $media-max-tablet
+    width: 100%;
