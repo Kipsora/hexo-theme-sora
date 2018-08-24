@@ -18,6 +18,7 @@ body
         button#sora-totop.button-totop
             i.fa.fa-angle-double-up(aria-hidden="true")
         include footer.pug
+
     each cdn in script_cdns
         script(src!=cdn)
     script try{Typekit.load({ async: true });}catch(e){}
@@ -38,7 +39,8 @@ body
             all[i].SourceElement().parentNode.className += ' has-jax';
           }
         });
-    script(src=url_for('/js/sora.js'))
+    include daovoice.pug
     if theme.mouse_effect
         script(type="text/javascript" src=url_for('/js/clicklove.js'))
+    script(src=url_for('/js/sora.js'))
     block bottom

@@ -49,12 +49,14 @@ cdns:
     mathjax: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML
     typekit: //use.typekit.net/yqo7yxr.js
     share: //cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js
+    pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
   style:
     aplayer: //cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css
     font-awesome: //stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
     googlefont: //fonts.googleapis.com/css?family=Merriweather%7CMerriweather+Sans%7CNoto+Serif%7CSource+Code+Pro%7CUbuntu:400,700
     hover: //cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css
     share: //cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css
+    pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-minimal.css
 
 sponsors:
   google:
@@ -78,9 +80,16 @@ google_analytics: UA-117925756-4
 disqus_script: https://kipsora.disqus.com/embed.js
 mouse_effect: true
 
+daovoice:
+
 backgrounds:
   - https://i.loli.net/2018/08/07/5b691474e1e2c.jpg
   - https://i.loli.net/2018/08/07/5b69147dbeb36.jpg
   - https://i.loli.net/2018/08/07/5b69147ee7d1f.jpg
   - https://i.loli.net/2018/08/07/5b691486d368d.jpg
   - https://i.loli.net/2018/08/07/5b691488c26a5.jpg
+
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml

@@ -16,8 +16,7 @@ const on_window_resize = function () {
 
 const on_scroll = function() {
     const progress = refresh_top_scroll();
-    console.log(progress > 0);
-    if (progress > 0) {
+    if (progress > 20) {
         totop.prop('disabled', false);
         totop.removeClass('opacity-hidden');
         $('#sora-navbar').addClass('navbar-hover');

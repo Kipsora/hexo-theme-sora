@@ -1,0 +1,14 @@
+extends includes/layout
+
+block head
+    link(rel="stylesheet" type="text/css" href=url_for('css/sora-page.css'))
+
+block content
+    +generate_nav(true)
+    main
+        article!=page.content
+        div.social-share
+        include includes/comment.pug
+
+block bottom
+    script(src=url_for('/js/sora-page.js'))
