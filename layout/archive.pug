@@ -155,13 +155,13 @@ block content
                 h1 标签归档
                 p
                     i.fa.fa-tags(aria-hidden="true")
-                    = ' ' + page.tag + ' Archives'
+                    = ' ' + page.tag
         else if page.category
             header.page-header
                 h1 分类归档
                 p
-                    i.fa.fa-tags(aria-hidden="true")
-                    = ' ' + page.category + ' Archives'
+                    i.fa.fa-folder(aria-hidden="true")
+                    = ' ' + page.category
         else
             header.page-header
                 h1 归档
