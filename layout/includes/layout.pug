@@ -19,8 +19,6 @@ body
             i.fa.fa-angle-double-up(aria-hidden="true")
         include footer.pug
 
-    each cdn in script_cdns
-        script(src!=cdn)
     script try{Typekit.load({ async: true });}catch(e){}
     script(type="text/x-mathjax-config").
         MathJax.Hub.Config({

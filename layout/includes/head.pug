@@ -4,6 +4,8 @@
 link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous")
 each cdn in style_cdns
     link(rel="stylesheet" href!=cdn)
+each cdn in script_cdns
+    script(src!=cdn)
 
 if google_analytics
     script(async, src="https://www.googletagmanager.com/gtag/js?id=" + google_analytics)
