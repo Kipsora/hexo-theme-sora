@@ -157,10 +157,11 @@ block content
                     i.fa.fa-tags(aria-hidden="true")
                     = ' ' + page.tag + ' Archives'
         else if page.category
-            h1 分类归档
-            p
-                i.fa.fa-tags(aria-hidden="true")
-                = ' ' + page.category + ' Archives'
+            header.page-header
+                h1 分类归档
+                p
+                    i.fa.fa-tags(aria-hidden="true")
+                    = ' ' + page.category + ' Archives'
         else
             header.page-header
                 h1 归档
